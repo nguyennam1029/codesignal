@@ -1,5 +1,11 @@
+import Heading from "@/components/typography/Heading";
+
 const page = () => {
-  return <div>Manage course</div>;
+  return (
+    <div>
+      <Heading>Quản lý khóa học</Heading>
+    </div>
+  );
 };
 
 export default page;

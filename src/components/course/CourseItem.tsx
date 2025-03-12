@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IconClock, IconEye, IconStar } from "../icons";
-const CourseItem = () => {
+import { ICourse } from "@/database/course.model";
+const CourseItem = ({ data }: { data: ICourse }) => {
+  console.log("🚀 ~ CourseItem ~ data:", data);
   const courseInfo = [
     {
-      title: "3000",
+      title: data.views,
       icon: (className?: string) => <IconEye className={className}></IconEye>,
     },
     {
-      title: "5.0",
+      title: data.rating[0],
       icon: (className?: string) => <IconStar className={className}></IconStar>,
     },
     {
@@ -35,9 +37,7 @@ const CourseItem = () => {
         </span>
       </Link>
       <div className="pt-4">
-        <h3 className="font-bold text-lg mb-3">
-          Khóa học NextJS Pro - Xây dựng E-Learning system hoàn chỉnh
-        </h3>
+        <h3 className="font-bold text-lg mb-3">{data?.title}</h3>
         <div className="flex items-center gap-3 mb-5 text-xs text-gray-500 dark:text-grayDark">
           {courseInfo.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
@@ -47,12 +47,12 @@ const CourseItem = () => {
           ))}
 
           <span className="font-bold text-primary ml-auto text-base">
-            799.000
+            {data?.sale_price}
           </span>
         </div>
 
         <Link
-          href="#"
+          href={`/course/${data.slug}`}
           className="flex items-center justify-center w-full mt-10 rounded-lg text-white font-semibold bg-primary h-12"
         >
           Xem chi tiết
