@@ -53,18 +53,23 @@ const courseSchema = new Schema<ICourse>({
   },
   price: {
     type: Number,
-    default: 0,
+
 
   },
   sale_price: {
     type: Number,
-    default: 0,
+   
 
   },
   status: {
     type: String,
     enum: Object.values(ECourseStatus),
     default: ECourseStatus.PENDING,
+  },
+    level: {
+    type: String,
+    enum: Object.values(ECourseLevel),
+    default: ECourseLevel.BEGINNER,
   },
   created_at: {
     type: Date,
@@ -86,7 +91,7 @@ const courseSchema = new Schema<ICourse>({
   },
   views: {
     type: Number,
-    default: 0,
+    
   },
   info: {
     requirements: {

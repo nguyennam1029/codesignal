@@ -15,7 +15,7 @@ const page = async ({
   return (
     <div>
       <Heading>Cập nhật khóa học</Heading>
-      <CourseUpdate data={findCourse} />
+      <CourseUpdate data={JSON.parse(JSON.stringify(findCourse))} />
     </div>
   );
 };
