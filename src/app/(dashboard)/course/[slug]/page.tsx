@@ -32,7 +32,7 @@ const page = async ({
             </>
           ) : (
             <Image
-              src="https://images.unsplash.com/photo-1716881763995-097b7a68ea3d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={data.image}
               alt=""
               fill
               className="w-full h-full object-cover rounded-lg"

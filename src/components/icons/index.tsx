@@ -9,3 +9,5 @@ export { default as IconStudy } from "./IconStudy";
 export { default as IconUsers } from "./IconUsers";
 export { default as IconNext } from "./IconNext";
 export { default as IconAdd } from "./IconAdd";
+export { default as IconDelete } from "./IconDelete";
+export { default as IconEdit } from "./IconEdit";

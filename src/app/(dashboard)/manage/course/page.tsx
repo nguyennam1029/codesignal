@@ -1,9 +1,15 @@
+import CourseManage from "@/components/course/CourseManage";
 import Heading from "@/components/typography/Heading";
+import { getAllCourses } from "@/lib/actions/course.actions";
 
-const page = () => {
+const page = async () => {
+  const courses = await getAllCourses();
+
   return (
     <div>
-      <Heading>Quản lý khóa học</Heading>
+      <CourseManage
+        courses={courses ? JSON.parse(JSON.stringify(courses)) : []}
+      ></CourseManage>
     </div>
   );
 };

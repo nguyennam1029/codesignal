@@ -3,7 +3,6 @@ import Link from "next/link";
 import { IconClock, IconEye, IconStar } from "../icons";
 import { ICourse } from "@/database/course.model";
 const CourseItem = ({ data }: { data: ICourse }) => {
-  console.log("🚀 ~ CourseItem ~ data:", data);
   const courseInfo = [
     {
       title: data.views,
